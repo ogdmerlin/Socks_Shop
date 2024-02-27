@@ -1,0 +1,44 @@
+# Kubernetes Deployment file for Socks Shop
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socks-shop
+  labels:
+    app: socks-shop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: socks-shop
+  template:
+    metadata:
+      labels:
+        app: socks-shop
+    spec:
+      containers:
+        - name: socks-shop
+          image: weaveworksdemos/socks-shop:0.4.7
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 1Gi
+      livenessProbe: # Check if stand is open
+        httpGet:
+          path: /health
+          port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+      readinessProbe: # Check if stand is ready for customers
+        httpGet:
+          path: /ready
+          port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 20
+---
+
