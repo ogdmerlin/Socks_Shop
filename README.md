@@ -16,14 +16,11 @@ This project involves deploying the Socks Shop microservices-based application o
 
 - Terraform
 - AWS Account
-- GitHub Actions
 - Kubernetes
 - Helm
 - Prometheus
 - ELK Stack
-- Ansible
 - Let's Encrypt
-- Docker
 - Socks Shop Application
 
 ## **Project Deliverables:**
@@ -45,7 +42,7 @@ socks-shop-deploy/
 │       └── ci-cd.yaml    # GitHub Actions workflow for CI/CD
 ├── k8s/
 │   ├── deployment.yaml   # Kubernetes deployment manifests
-│   └── service.yaml      # Kubernetes service manifests
+│   └── ingress.yaml      # Kubernetes ingress manifest
 ├── monitoring/
 │   ├── prometheus/
 │   │   └── values.yaml   # Custom values for Prometheus Helm chart
