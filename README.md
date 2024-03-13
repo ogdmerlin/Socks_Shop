@@ -1,6 +1,12 @@
 # **Socks Shop Microservices-based Application Deployment on Kubernetes using IaC.**
 
-This project involves deploying the Socks Shop microservices-based application on a Kubernetes cluster using an Infrastructure as Code (IaC) approach. The project will utilize Terraform as the configuration management tool provision and manage the infrastructure on AWS, with a focus on readability, maintainability and DevOps best practices.
+## **Project Overview:**
+
+The Socks Shop application is a popular microservices-based e-commerce platform that is used as a reference application for demonstrating modern cloud-native technologies. The application is composed of multiple microservices, each of which is responsible for a specific function, such as product catalog, shopping cart, and user authentication. The application is designed to be highly scalable, resilient, and fault-tolerant, making it an ideal candidate for deployment on Kubernetes.
+
+The project will involve deploying the Socks Shop application on a Kubernetes cluster using an Infrastructure as Code (IaC) approach. This will include provisioning the necessary infrastructure resources on AWS, setting up a deployment pipeline, monitoring the performance and health of the application, and securing the infrastructure.
+
+The project will be implemented using Terraform for infrastructure provisioning, GitHub Actions for the deployment pipeline, Kubernetes for container orchestration, Helm for package management, Prometheus for monitoring, ELK Stack for logging, and Ansible for security.
 
 ## **This project will include the following components:**
 
@@ -49,26 +55,28 @@ socks-shop-deploy/
 │   └── grafana/
 │       └── values.yaml   # Custom values for Grafana Helm chart
 ├── logging/
-│   └── efk/
-│       ├── elasticsearch.yaml # Elasticsearch deployment
-│       ├── fluentd.yaml       # Fluentd configuration
-│       └── kibana.yaml        # Kibana dashboard configuration
+│       ├── elasticsearch.yaml  # Elasticsearch deployment
+│       ├── filebeat.yaml       # Fluentd configuration
+│       └── kibana-deployment.yaml         # Kibana dashboard configuration
+|       └── cronjob.yaml        # Fluentd configuration
+|       └── metricbeat.yaml     #  Fluentd configuration
+|       └── logstash-deployment.yaml        # Fluentd configuration
 ├── terraform/
 │   ├── main.tf         # Main Terraform configuration for AWS EKS
-│   ├── variables.tf    # Terraform variables
+│   ├── terraform.tf    # Terraform configuration
 │   ├── outputs.tf      # Terraform outputs
 │   ├── provider.tf     # Provider configuration
 │   └── vpc.tf          # VPC configuration
-└── Dockerfile          # Dockerfile for the Socks Shop application
+└──README.md
 ```
 
 The project will be organized into the following directories:
 
-- `infrastructure`: This directory will contain the Terraform configuration files for provisioning the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster.
-- `deployment`: This directory will contain the GitHub Actions workflow files for setting up a deployment pipeline to build and deploy the Socks Shop application to the Kubernetes cluster.
-- `monitoring`: This directory will contain the configuration files for setting up Prometheus to monitor the performance and health of the Socks Shop application.
-- `logging`: This directory will contain the configuration files for setting up a centralized logging solution, such as ELK stack, to collect and analyze logs from the Socks Shop application.
-- `security`: This directory will contain the Ansible playbooks for securing the infrastructure with network perimeter security access rules and encrypting sensitive information using Ansible Vault.
+- `Infrastructure`: This directory will contain the Terraform configuration files for provisioning the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster.
+- `kubernetes`: This directory will contain the Kubernetes manifests for deploying the Socks Shop application, including deployment and ingress resources.
+- `CI/CD`: This directory will contain the GitHub Actions workflow files for setting up a deployment pipeline to build and deploy the Socks Shop application to the Kubernetes cluster.
+- `Monitoring`: This directory will contain the configuration files for setting up Prometheus to monitor the performance and health of the Socks Shop application.
+- `Logging`: This directory will contain the configuration files for setting up a centralized logging solution, such as ELK stack, to collect and analyze logs from the Socks Shop application.
 
 The project will also include a `README.md` file in each directory to provide detailed instructions on how to set up and configure the components.
 
@@ -90,21 +98,11 @@ The following tools and technologies will be used in the project:
 
 - ELK Stack: The ELK Stack is a collection of three open-source products — Elasticsearch, Logstash, and Kibana — all developed, managed, and maintained by Elastic. The ELK Stack is used to collect, search, analyze, and visualize log data in real time.
 
-- Ansible: Ansible is an open-source automation tool that automates software provisioning, configuration management, and application deployment.
-
 - Let's Encrypt: Let's Encrypt is a free, automated, and open certificate authority brought to you by the nonprofit Internet Security Research Group (ISRG).
 
 - Docker: Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
 
 - Socks Shop Application: The Socks Shop application is a popular microservices-based e-commerce platform that is used as a reference application for demonstrating modern cloud-native technologies.
-
-## **Project Overview:**
-
-The Socks Shop application is a popular microservices-based e-commerce platform that is used as a reference application for demonstrating modern cloud-native technologies. The application is composed of multiple microservices, each of which is responsible for a specific function, such as product catalog, shopping cart, and user authentication. The application is designed to be highly scalable, resilient, and fault-tolerant, making it an ideal candidate for deployment on Kubernetes.
-
-The project will involve deploying the Socks Shop application on a Kubernetes cluster using an Infrastructure as Code (IaC) approach. This will include provisioning the necessary infrastructure resources on AWS, setting up a deployment pipeline, monitoring the performance and health of the application, and securing the infrastructure.
-
-The project will be implemented using Terraform for infrastructure provisioning, GitHub Actions for the deployment pipeline, Kubernetes for container orchestration, Helm for package management, Prometheus for monitoring, ELK Stack for logging, and Ansible for security.
 
 ## **Project Objectives:**
 
