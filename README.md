@@ -119,6 +119,46 @@ The main objectives of the project are as follows:
 
 Using Terraform, we will provision the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster. This will allow for a clear and reproducible infrastructure setup.
 
+1.  Make sure you have installed Terraform on your local machine. If not, you can download it from the official website.
+
+    [Terraform Download](https://www.terraform.io/downloads.html)
+
+2.  Create a new directory for the Terraform configuration files and navigate to it.
+
+        mkdir Socks-Shop_Terraform
+        cd Terraform
+
+3.  Git clone this repository and navigate to the terraform folder to have the Terraform configuration files and initiate the Terraform project.
+
+        git clone https://github.com/ogdmerlin/Socks-Shop/Terraform
+
+4.  Run the following command to initialize the Terraform project:
+
+        terraform init
+
+5.  Run the following command to create an execution plan:
+
+        terraform plan
+
+6.  Run the following command to apply the changes:
+
+        terraform apply --auto-approve
+
+        #the flag --auto-approve can be added to avoid the prompt for confirmation.
+
+Below is a screenshot of my EKS cluster being provisioned by terraform👇🏽:
+
+  <img src="Images/eks.png">
+
+This below command allow us to configure the kubectl to connect to the EKS cluster, the specified region and the cluster name.
+
+    aws eks update-kubeconfig --name=socksShop-eks-U2VM9 --region=us-east-2
+
+7.  After the infrastructure has been provisioned, you will see the output of the Terraform apply command, including the EKS cluster endpoint and the kubeconfig file.
+    <img src="Images/all-pods.png">
+8.  You can use the kubeconfig file to access the Kubernetes cluster and deploy the Socks Shop application.
+    <img src="Images/get-pods-A.png">
+
 ## Deployment Pipeline
 
 The project will include a deployment pipeline that utilizes GitHub Actions to build and deploy the Socks Shop application to the Kubernetes cluster. This will enable fast and reliable deployments, with the ability to easily rollback changes if necessary.
