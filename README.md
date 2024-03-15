@@ -187,7 +187,16 @@ Prometheus will be used to monitor the performance and health of the Socks Shop 
 
 We will use the ELK stack to collect and analyze logs from the Socks Shop application. The ELK stack is a collection of three open-source products — Elasticsearch, Logstash, and Kibana — all developed, managed, and maintained by Elastic. The ELK Stack is used to collect, search, analyze, and visualize log data in real time.
 
+- Below is the screenshot showing the deployment of logging to our cluster:👇🏽
+
 <img src="Images/logging-apply-all.png">
+
+- We verify that our pods are running the freshly deployed logging services.
+  <img src="Images/all-kubesystem.png">
+
+- After the successful deployment of the loggings into our cluster, we use the following command to portfoward the service to we can access it locally;
+
+        kubectl port-forward service/kibana-logging 5601:5601 -n kube-system
 
 <img src="Images/kibanna_logging.png">
 
