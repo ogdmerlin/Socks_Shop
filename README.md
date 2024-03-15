@@ -127,7 +127,7 @@ Using Terraform, we will provision the necessary infrastructure resources on AWS
 2.  Create a new directory for the Terraform configuration files and navigate to it.
 
         mkdir Socks-Shop_Terraform
-        cd Terraform
+        cd Socks-Shop_Terraform
 
 3.  Git clone this repository and navigate to the terraform folder to have the Terraform configuration files and initiate the Terraform project.
 
