@@ -113,7 +113,6 @@ The main objectives of the project are as follows:
 - Set up a deployment pipeline using GitHub Actions to build and deploy the Socks Shop application to the Kubernetes cluster
 - Monitor the performance and health of the Socks Shop application using Prometheus
 - Collect and analyze logs from the Socks Shop application using a centralized logging solution, such as ELK stack
-- Secure the infrastructure with network perimeter security access rules and encrypt sensitive information using Ansible Vault.
 
 ## Infrastructure Provisioning
 
@@ -155,8 +154,11 @@ This below command allow us to configure the kubectl to connect to the EKS clust
     aws eks update-kubeconfig --name=socksShop-eks-U2VM9 --region=us-east-2
 
 7.  After the infrastructure has been provisioned, you will see the output of the Terraform apply command, including the EKS cluster endpoint and the kubeconfig file.
+
     <img src="Images/all-pods.png">
+
 8.  You can use the kubeconfig file to access the Kubernetes cluster and deploy the Socks Shop application.
+
     <img src="Images/get-pods-A.png">
 
 ## Deployment Pipeline
