@@ -157,9 +157,9 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
 7.  After the infrastructure has been provisioned, you will see the output of the Terraform apply command, including the EKS cluster endpoint and the kubeconfig file.
 
-    <img src="Images/all-pods.png">
-
 8.  You can use the kubeconfig file to access the Kubernetes cluster and deploy the Socks Shop application.
+
+    <img src="Images/all-pods.png">
 
     <img src="Images/get-pods-A.png">
 
