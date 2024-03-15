@@ -161,6 +161,10 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
     <img src="Images/all-pods.png">
 
+9.  You can also use the following command to verify that the Socks Shop application is running on the Kubernetes cluster:
+
+        kubectl get all -A
+
     <img src="Images/get-pods-A.png">
 
 ## Deployment Pipeline
