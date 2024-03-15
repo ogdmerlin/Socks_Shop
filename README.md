@@ -1,5 +1,9 @@
 # **Socks Shop Microservices-based Application Deployment on Kubernetes using IaC.**
 
+**PROJECT LIVE LINK:** [CAPSTONE PROJECT LINK](http://capstone.ogdmerlin.xyz)
+
+##
+
 ## **Project Overview:**
 
 The Socks Shop application is a popular microservices-based e-commerce platform that is used as a reference application for demonstrating modern cloud-native technologies. The application is composed of multiple microservices, each of which is responsible for a specific function, such as product catalog, shopping cart, and user authentication. The application is designed to be highly scalable, resilient, and fault-tolerant, making it an ideal candidate for deployment on Kubernetes.
@@ -112,7 +116,15 @@ The main objectives of the project are as follows:
 - Provision the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster
 - Set up a deployment pipeline using GitHub Actions to build and deploy the Socks Shop application to the Kubernetes cluster
 - Monitor the performance and health of the Socks Shop application using Prometheus
-- Collect and analyze logs from the Socks Shop application using a centralized logging solution, such as ELK stack
+- Collect and analyze logs from the Socks Shop application using a centralized logging solution, such as ELK stack.
+
+#
+
+## **GETTING STARTED**
+
+Socks Shop Resources: https://github.com/microservices-demo/microservices-demo.github.io
+
+Demo: https://github.com/microservices-demo/microservices-demo/tree/master
 
 ## Infrastructure Provisioning
 
