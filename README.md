@@ -163,7 +163,15 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
 ## Deployment Pipeline
 
-The project will include a deployment pipeline that utilizes GitHub Actions to build and deploy the Socks Shop application to the Kubernetes cluster. This will enable fast and reliable deployments, with the ability to easily rollback changes if necessary.
+The deployment pipeline will be configured using a GitHub Actions workflow file, which will define the steps required to build and deploy the Socks Shop application. The workflow file will be triggered by a push to the main branch of the repository, and will include the following steps:
+
+Our workflow file must be in our root directory for our GitHub Actions to detect the file automatically.
+
+- Checkout the source code from the repository
+- Build the Docker images for the Socks Shop application
+- Deploy the Socks Shop application to the Kubernetes cluster
+
+The deployment pipeline will be configured to run automatically whenever changes are pushed to the main branch of the repository, ensuring that the Socks Shop application is always up to date and running the latest version.
 
 ## Monitoring
 
