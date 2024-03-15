@@ -114,11 +114,15 @@ The main objectives of the project are as follows:
 - Monitor the performance and health of the Socks Shop application using Prometheus
 - Collect and analyze logs from the Socks Shop application using a centralized logging solution, such as ELK stack
 
+#
+
 ## Infrastructure Provisioning
 
 Using Terraform, we will provision the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster. This will allow for a clear and reproducible infrastructure setup.
 
-1.  Make sure you have installed Terraform on your local machine. If not, you can download it from the official website.
+1.  Make sure you have installed Terraform alongside AWS CLI on your local machine. If not, you can download it from the official website.
+
+    [AWS CLI Installation guide](https://aws.amazon.com/cli/)
 
     [Terraform Download](https://www.terraform.io/downloads.html)
 
@@ -175,12 +179,15 @@ The deployment pipeline will be configured to run automatically whenever changes
 
 ## Monitoring
 
-Prometheus will be used to monitor the performance and health of the Socks Shop application. This will include metrics such as request latency, error rate, and request volume.
-Logging: The project will include a centralized logging solution, such as ELK stack, to collect and analyze logs from the Socks Shop application. This will enable quick identification and resolution of issues.
+Prometheus will be used to monitor the performance and health of the Socks Shop application. This will include metrics such as request latency, error rate, and request volume. The Prometheus server will be configured to scrape metrics from the Socks Shop application and store them in a time-series database. Grafana will be used to visualize the metrics and create dashboards to monitor the performance and health of the application.
 
 ## Logging
 
-The project will include a centralized logging solution, such as ELK stack, to collect and analyze logs from the Socks Shop application. This will enable quick identification and resolution of issues.
+We will use the ELK stack to collect and analyze logs from the Socks Shop application. The ELK stack is a collection of three open-source products — Elasticsearch, Logstash, and Kibana — all developed, managed, and maintained by Elastic. The ELK Stack is used to collect, search, analyze, and visualize log data in real time.
+
+<img src="Images/logging-apply-all.png">
+
+<img src="Images/kibanna_logging.png">
 
 ## Security
 
@@ -188,7 +195,9 @@ The application will be secured with HTTPS using a Let's Encrypt certificate. Ad
 
 ## **Conclusion:**
 
-This project will provide hands-on experience with Infrastructure as Code, Kubernetes, DevOps best practices, and cloud security. It will also demonstrate the value of automation and monitoring in ensuring the reliability and performance of microservices-based applications. The project will be a valuable addition to the team's portfolio and will help to build a strong foundation in modern cloud-native technologies.
+This project will provide hands-on experience with Infrastructure as Code, Kubernetes, DevOps best practices, and cloud security. It will also demonstrate the value of automation and monitoring in ensuring the reliability and performance of microservices-based applications. By the end of the project, you will have a fully functional deployment pipeline for the Socks Shop application, including infrastructure provisioning, monitoring, logging, and security.
+
+#
 
 ## **References:**
 
