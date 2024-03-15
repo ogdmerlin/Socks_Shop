@@ -114,8 +114,6 @@ The main objectives of the project are as follows:
 - Monitor the performance and health of the Socks Shop application using Prometheus
 - Collect and analyze logs from the Socks Shop application using a centralized logging solution, such as ELK stack
 
-#
-
 ## Infrastructure Provisioning
 
 Using Terraform, we will provision the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster. This will allow for a clear and reproducible infrastructure setup.
