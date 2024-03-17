@@ -1,5 +1,7 @@
 # **Socks Shop Microservices-based Application Deployment on Kubernetes using IaC.**
 
+<img src="Images/SocksShop_diagram.png">
+
 **PROJECT LIVE LINK:** [CAPSTONE PROJECT LINK](http://capstone.ogdmerlin.xyz)
 
 ##
