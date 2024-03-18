@@ -128,7 +128,7 @@ Socks Shop Resources: https://github.com/microservices-demo/microservices-demo.g
 
 Demo: https://github.com/microservices-demo/microservices-demo/tree/master
 
-## Infrastructure Provisioning
+## **Infrastructure Provisioning:**
 
 Using Terraform, we will provision the necessary infrastructure resources on AWS, including VPCs, subnets, security groups, and EKS cluster. This will allow for a clear and reproducible infrastructure setup.
 
@@ -181,7 +181,7 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
     <img src="Images/get-pods-A.png">
 
-## Deployment Pipeline
+## **Deployment Pipeline:**
 
 The deployment pipeline will be configured using a GitHub Actions workflow file, which will define the steps required to build and deploy the Socks Shop application. The workflow file will be triggered by a push to the main branch of the repository, and will include the following steps:
 
@@ -193,11 +193,11 @@ Our workflow file must be in our root directory for our GitHub Actions to detect
 
 The deployment pipeline will be configured to run automatically whenever changes are pushed to the main branch of the repository, ensuring that the Socks Shop application is always up to date and running the latest version.
 
-## Monitoring
+## **Monitoring**
 
 Prometheus will be used to monitor the performance and health of the Socks Shop application. This will include metrics such as request latency, error rate, and request volume. The Prometheus server will be configured to scrape metrics from the Socks Shop application and store them in a time-series database. Grafana will be used to visualize the metrics and create dashboards to monitor the performance and health of the application.
 
-## Logging
+## **Logging:**
 
 We will use the ELK stack to collect and analyze logs from the Socks Shop application. The ELK stack is a collection of three open-source products — Elasticsearch, Logstash, and Kibana — all developed, managed, and maintained by Elastic. The ELK Stack is used to collect, search, analyze, and visualize log data in real time.
 
@@ -214,7 +214,7 @@ We will use the ELK stack to collect and analyze logs from the Socks Shop applic
 
 <img src="Images/kibanna_logging.png">
 
-## Security
+## **Security:**
 
 The application will be secured with HTTPS using a Let's Encrypt certificate. Additionally, bonus points will be awarded for securing the infrastructure with network perimeter security access rules and encrypting sensitive information using Ansible Vault.
 
