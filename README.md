@@ -187,6 +187,12 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
     <img src="Images/get-pods-A.png">
 
+10. After we confirm that our pods are running, we can now test the application by port-forwarding the service to our local machine using the following command:
+
+        kubectl port-forward service/front-end -n sockshop 30001:80
+
+    <img src="Images/frontend.png">
+
 ## **Deployment Pipeline:**
 
 The deployment pipeline will be configured using a GitHub Actions workflow file, which will define the steps required to build and deploy the Socks Shop application. The workflow file will be triggered by a push to the main branch of the repository, and will include the following steps:
