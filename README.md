@@ -171,6 +171,12 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
 7.  After the infrastructure has been provisioned, you will see the output of the Terraform apply command, including the EKS cluster endpoint and the kubeconfig file.
 
+- We apply our deployment manifests to our cluster using the following command:
+
+        kubectl apply -f kubernetes/deployment.yaml
+
+    <img src="Images/apply-deployment.png">
+
 8.  You can use the kubeconfig file to access the Kubernetes cluster and deploy the Socks Shop application.
 
     <img src="Images/all-pods.png">
@@ -197,6 +203,41 @@ The deployment pipeline will be configured to run automatically whenever changes
 
 Prometheus will be used to monitor the performance and health of the Socks Shop application. This will include metrics such as request latency, error rate, and request volume. The Prometheus server will be configured to scrape metrics from the Socks Shop application and store them in a time-series database. Grafana will be used to visualize the metrics and create dashboards to monitor the performance and health of the application.
 
+First create the monitoring namespace using the `00-monitoring-ns.yaml` file:
+
+    kubectl create -f 00-monitoring-ns.yaml
+
+- **Prometheus**
+
+To deploy simply apply all the prometheus manifests (01-10) in any order:
+
+    kubectl apply $(ls *-prometheus-*.yaml | awk ' { print " -f " $1 } ')
+
+The prometheus server will be exposed on Nodeport `31090` using the following command:
+
+    kubectl port-forward service/prometheus-monitoring 31090:9090 -n monitoring
+
+<img src="Images/prometheus.png">
+
+- **Grafana**
+
+First apply the grafana manifests from 20 to 22:
+
+    kubectl apply $(ls *-grafana-*.yaml | awk ' { print " -f " $1 }'  | grep -v grafana-import)
+
+Once the grafana pod is in the Running state apply the `23-grafana-import-dash-batch.yaml` manifest to import the Dashboards:
+
+    kubectl apply -f 23-grafana-import-dash-batch.yaml
+
+Grafana will be exposed on the NodePort `31300` using the following command:
+
+    kubectl port-forward service/grafana-monitoring 31300:3000 -n monitoring
+
+- Below is the screenshot:👇🏽
+  <img src="Images/grafana-sockshop.png">
+
+    <img src="Images/prometheus-pod-resources.png">
+
 ## **Logging:**
 
 We will use the ELK stack to collect and analyze logs from the Socks Shop application. The ELK stack is a collection of three open-source products — Elasticsearch, Logstash, and Kibana — all developed, managed, and maintained by Elastic. The ELK Stack is used to collect, search, analyze, and visualize log data in real time.
@@ -216,7 +257,7 @@ We will use the ELK stack to collect and analyze logs from the Socks Shop applic
 
 ## **Security:**
 
-The application will be secured with HTTPS using a Let's Encrypt certificate. Additionally, bonus points will be awarded for securing the infrastructure with network perimeter security access rules and encrypting sensitive information using Ansible Vault.
+The application will be secured with HTTPS using a Let's Encrypt certificate. Let's Encrypt is a free, automated, and open certificate authority that provides free SSL/TLS certificates for websites. The certificate will be used to secure the communication between the client and the Socks Shop application, ensuring that the data is encrypted and secure.
 
 ## **Conclusion:**
 
