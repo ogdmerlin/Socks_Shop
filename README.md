@@ -189,7 +189,7 @@ This below command allow us to configure the kubectl to connect to the EKS clust
 
 10. After we confirm that our pods are running, we can now test the application by port-forwarding the service to our local machine using the following command:
 
-        kubectl port-forward service/front-end -n sockshop 30001:80
+        kubectl port-forward service/front-end -n sock-shop 30001:80
 
     <img src="Images/frontend.png">
 
