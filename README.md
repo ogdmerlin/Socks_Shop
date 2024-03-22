@@ -221,7 +221,7 @@ To deploy simply apply all the prometheus manifests (01-10) in any order:
 
 The prometheus server will be exposed on Nodeport `31090` using the following command:
 
-    kubectl port-forward service/prometheus-monitoring 31090:9090 -n monitoring
+    kubectl port-forward service/prometheus 31090:9090 -n monitoring
 
 <img src="Images/prometheus.png">
 
@@ -237,7 +237,7 @@ Once the grafana pod is in the Running state apply the `23-grafana-import-dash-b
 
 Grafana will be exposed on the NodePort `31300` using the following command:
 
-    kubectl port-forward service/grafana-monitoring 31300:3000 -n monitoring
+    kubectl port-forward service/grafana 31300:3000 -n monitoring
 
 - Below is the screenshot:👇🏽
   <img src="Images/grafana-sockshop.png">
@@ -257,7 +257,7 @@ We will use the ELK stack to collect and analyze logs from the Socks Shop applic
 
 - After the successful deployment of the loggings into our cluster, we use the following command to portfoward the service to we can access it locally;
 
-        kubectl port-forward service/kibana-logging 5601:5601 -n kube-system
+        kubectl port-forward service/kibana 5601:5601 -n kube-system
 
 <img src="Images/kibanna_logging.png">
 
