@@ -263,7 +263,7 @@ We will use the ELK stack to collect and analyze logs from the Socks Shop applic
 
 ## **Security:**
 
-The application will be secured with HTTPS using a Let's Encrypt certificate. Let's Encrypt is a free, automated, and open certificate authority that provides free SSL/TLS certificates for websites. The certificate will be used to secure the communication between the client and the Socks Shop application, ensuring that the data is encrypted and secure.
+The application will be secured with HTTPS using a Let's Encrypt certificate. Let's Encrypt is a free, automated, and open certificate authority that provides free SSL/TLS certificates for websites. The certificate will be used to secure the communication between the client and the Socks-Shop application, ensuring that the data is encrypted and secure.
 
 ## **Conclusion:**
 
