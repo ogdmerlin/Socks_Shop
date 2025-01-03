@@ -1,4 +1,4 @@
-# **Socks Shop Microservices-based Application Deployment on Kubernetes using IaC.**
+# **Socks Shop Microservice Application Deployment on Kubernetes using IaC and DevOps Best Practices.**
 
 <img src="Images/SocksShop_diagram.png">
 
